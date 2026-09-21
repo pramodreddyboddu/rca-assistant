@@ -1,0 +1,67 @@
+name: Feature request
+description: Suggest an idea for the RCA Assistant
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests are triaged against the roadmap. A clear problem
+        statement and a concrete proposal get them moved faster.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What problem or gap does this address? Who hits it, and when?
+      placeholder: When diagnosing X, I can't ...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How should this work? Sketch the behavior, not the implementation.
+      placeholder: I'd like to be able to ...
+    validations:
+      required: true
+  - type: dropdown
+    id: technology
+    attributes:
+      label: Technology / connector area
+      description: Which part of the product does this concern?
+      multiple: false
+      options:
+        - General / not connector-specific
+        - IBM MQ
+        - Kafka
+        - Tomcat
+        - WebSphere
+        - WebLogic
+        - JBoss / WildFly
+        - RabbitMQ
+        - ActiveMQ Artemis
+        - TIBCO EMS
+        - Nginx
+        - Apache HTTPD
+        - HAProxy
+        - PostgreSQL
+        - MySQL
+        - Oracle DB
+        - Redis
+        - Elasticsearch
+        - MongoDB
+        - Kubernetes
+        - Docker
+        - Linux
+        - MCP server / gateway
+        - Agent engine
+        - Demo / docs
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What other approaches did you consider, and why not them?
+      placeholder: (optional)
+    validations:
+      required: false

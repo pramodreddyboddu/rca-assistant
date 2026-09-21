@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "tech": "ibmmq",
+    "call": "inquire_listener_status",
+    "key_args": {
+      "op": "MQCMD_INQUIRE_LISTENER_STATUS",
+      "listener": "STOPPED.LSR"
+    },
+    "recorded_at": "2026-09-21T22:35:48.943837+00:00",
+    "source": "live",
+    "codec": "connectors.recording v1"
+  },
+  "response": null
+}

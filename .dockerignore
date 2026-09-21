@@ -1,0 +1,24 @@
+# Build / runtime junk that must not enter the image.
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Local state: run history and audit trails are mounted as a named volume
+# at runtime instead of being baked into the image.
+runs/
+audit*.jsonl
+
+# Never ship the repo history or the (possibly credential-bearing) local env.
+.git/
+.env
+.env.*
+
+# Dev/OS noise.
+.DS_Store
+*.swp
+*~

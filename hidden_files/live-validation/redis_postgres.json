@@ -1,0 +1,66 @@
+{
+  "worker": "redis+postgres",
+  "services": [
+    {
+      "name": "redis",
+      "version": "7.0.15",
+      "seeded": "keys mq:queue:depth:orders.in=42, hash mq:queue:stats(3 fields), list mq:deadletter:orders(2 items), rca:probe:ping"
+    },
+    {
+      "name": "postgresql",
+      "version": "16.15",
+      "seeded": "database rcatest, table orders(id serial, status text) with 5 rows (NEW, PROCESSING, SHIPPED, CANCELLED, NEW); read role rcaread with SELECT on orders"
+    }
+  ],
+  "checks": [
+    {
+      "connector": "redis",
+      "method": "get_redis_info",
+      "ok": true,
+      "detail": "version=7.0.15, uptime_secs=28, clients=1, hit_rate=100.0"
+    },
+    {
+      "connector": "redis",
+      "method": "get_redis_replication",
+      "ok": true,
+      "detail": "role=master, connected_replicas=0, master_link=None"
+    },
+    {
+      "connector": "redis",
+      "method": "get_redis_slowlog",
+      "ok": true,
+      "detail": "0 entries returned (fresh server, likely 0 entries; all seeded commands executed before INFO lookups may register)"
+    },
+    {
+      "connector": "redis",
+      "method": "direct_seed_verify",
+      "ok": true,
+      "detail": "mq:queue:depth:orders.in=42, hash fields=3, list len=2"
+    },
+    {
+      "connector": "postgres",
+      "method": "get_postgres_health",
+      "ok": true,
+      "detail": "db=rcatest, version=PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0...., used=6/100"
+    },
+    {
+      "connector": "postgres",
+      "method": "get_postgres_blocking",
+      "ok": true,
+      "detail": "blockers=0 (expected 0 on idle test server)"
+    },
+    {
+      "connector": "postgres",
+      "method": "get_postgres_replication",
+      "ok": true,
+      "detail": "role=primary, lags None on primary as expected"
+    },
+    {
+      "connector": "postgres",
+      "method": "direct_seed_verify",
+      "ok": true,
+      "detail": "orders rows=5, sample status=CANCELLED"
+    }
+  ],
+  "notes": "Live validation ran 2026-09-21 ~4:20 PM Central time. Real Redis 7.0.15 and PostgreSQL 16.15 installed via apt on this host; drivers redis-py 8.1.0 and psycopg 3.3.6 pip-installed. All connector read methods called directly against the live services: Redis get_redis_info returned the real INFO (version/uptime/clients/hit_rate), get_redis_replication reported role=master with 0 replicas, get_redis_slowlog returned an empty list (no command exceeded the 10ms slowlog threshold on a fresh server; not a failure). Postgres get_postgres_health returned the real version and live connection counts, get_postgres_blocking returned an empty blockers list (idle server, expected), get_postgres_replication reported role=primary with None lags (expected on a primary). Seeded data verified: Redis key mq:queue:depth:orders.in read back as 42; orders table returned 5 rows via the read role. Privileged postgres path (terminate_postgres_backend) was NOT called. Both services were stopped after validation to free RAM."
+}

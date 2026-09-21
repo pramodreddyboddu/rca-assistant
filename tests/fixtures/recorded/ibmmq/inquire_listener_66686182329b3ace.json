@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "tech": "ibmmq",
+    "call": "inquire_listener",
+    "key_args": {
+      "op": "MQCMD_INQUIRE_LISTENER",
+      "listener": "STOPPED.LSR"
+    },
+    "recorded_at": "2026-09-21T22:35:48.946092+00:00",
+    "source": "live",
+    "codec": "connectors.recording v1"
+  },
+  "response": [
+    {
+      "$intmap": [
+        [
+          3554,
+          {
+            "$bytes": "U1RPUFBFRC5MU1IgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg"
+          }
+        ],
+        [
+          1601,
+          2
+        ],
+        [
+          1501,
+          2
+        ],
+        [
+          1522,
+          1415
+        ],
+        [
+          3552,
+          {
+            "$bytes": "ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg"
+          }
+        ],
+        [
+          1602,
+          0
+        ],
+        [
+          3555,
+          {
+            "$bytes": "ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIA=="
+          }
+        ],
+        [
+          2027,
+          {
+            "$bytes": "MjAyNi0wOS0yMSAg"
+          }
+        ],
+        [
+          2028,
+          {
+            "$bytes": "MjIuMzUuNDc="
+          }
+        ]
+      ]
+    }
+  ]
+}

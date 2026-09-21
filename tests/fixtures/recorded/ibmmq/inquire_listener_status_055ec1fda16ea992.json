@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "tech": "ibmmq",
+    "call": "inquire_listener_status",
+    "key_args": {
+      "op": "MQCMD_INQUIRE_LISTENER_STATUS",
+      "listener": "LISTENER.TCP"
+    },
+    "recorded_at": "2026-09-21T22:29:54.764690+00:00",
+    "source": "live: QM1, IBM MQ 10.0.0.5, htch-runtime, 2026-09-21",
+    "codec": "connectors.recording v1"
+  },
+  "response": [
+    {
+      "$intmap": [
+        [
+          3554,
+          {
+            "$bytes": "TElTVEVORVIuVENQ"
+          }
+        ],
+        [
+          1599,
+          2
+        ],
+        [
+          1024,
+          14805
+        ],
+        [
+          3556,
+          {
+            "$bytes": "MjAyNi0wOS0yMSAg"
+          }
+        ],
+        [
+          3557,
+          {
+            "$bytes": "MjIuMjkuMTE="
+          }
+        ],
+        [
+          3555,
+          {
+            "$bytes": "UkNBIGxpdmUtZ3JvdW5kaW5nIGxpc3RlbmVyICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIA=="
+          }
+        ],
+        [
+          1501,
+          2
+        ],
+        [
+          1601,
+          2
+        ],
+        [
+          3552,
+          {
+            "$bytes": ""
+          }
+        ],
+        [
+          1522,
+          1414
+        ],
+        [
+          1602,
+          100
+        ]
+      ]
+    }
+  ]
+}

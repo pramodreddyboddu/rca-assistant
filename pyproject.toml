@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rca-assistant"
+version = "0.7.0"
+description = "Root-cause analysis assistant for middleware and infrastructure operations: secure read-only MCP connectors gather evidence, the engine proposes cited root causes, and humans approve every fix."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+    "mcp>=2,<3",
+]
+keywords = ["rca", "root-cause-analysis", "mcp", "middleware", "observability", "ibm-mq", "kafka"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Systems Administration",
+    "Topic :: System :: Monitoring",
+]
+
+[project.scripts]
+rca = "rca_assistant.cli:main"
+rca-assistant = "rca_assistant.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/pramodreddyboddu/rca-assistant"
+Repository = "https://github.com/pramodreddyboddu/rca-assistant"
+Issues = "https://github.com/pramodreddyboddu/rca-assistant/issues"
+Documentation = "https://github.com/pramodreddyboddu/rca-assistant/tree/master/docs"
+Changelog = "https://github.com/pramodreddyboddu/rca-assistant/blob/master/docs/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+include = ["sim*", "mcp_server*", "agent*", "audit*", "demo*", "connectors*", "rca_assistant*"]
+
+[tool.setuptools.package-data]
+demo = ["static/*"]

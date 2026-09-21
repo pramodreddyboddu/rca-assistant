@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "tech": "ibmmq_recovered",
+    "call": "inquire_channel_status",
+    "key_args": {
+      "op": "MQCMD_INQUIRE_CHANNEL_STATUS",
+      "qmgr": "QM1",
+      "channel": "BATCH.CHL"
+    },
+    "recorded_at": "2026-09-21T23:05:42.157609+00:00",
+    "source": "live: QM1, IBM MQ 10.0.0.5, htch-runtime, 2026-09-21",
+    "codec": "connectors.recording v1"
+  },
+  "response": [
+    {
+      "$intmap": [
+        [
+          3501,
+          {
+            "$bytes": "QkFUQ0guQ0hMICAgICAgICAgICA="
+          }
+        ],
+        [
+          1511,
+          1
+        ],
+        [
+          1537,
+          0
+        ],
+        [
+          1502,
+          50
+        ],
+        [
+          1539,
+          1
+        ],
+        [
+          1538,
+          1
+        ],
+        [
+          1536,
+          268
+        ],
+        [
+          1535,
+          268
+        ],
+        [
+          3529,
+          {
+            "$bytes": "MjAyNi0wOS0yMSAg"
+          }
+        ],
+        [
+          3528,
+          {
+            "$bytes": "MjMuMDUuMzQ="
+          }
+        ],
+        [
+          1575,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1576,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1611,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1612,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          3506,
+          {
+            "$bytes": "MTI3LjAuMC4xKDE0MTUpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg"
+          }
+        ],
+        [
+          3532,
+          {
+            "$bytes": "MDAwMDAwMDAwMDAwMDAwMA=="
+          }
+        ],
+        [
+          1531,
+          0
+        ],
+        [
+          1523,
+          1011
+        ],
+        [
+          1532,
+          0
+        ],
+        [
+          1606,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1563,
+          300
+        ],
+        [
+          1528,
+          0
+        ],
+        [
+          3530,
+          {
+            "$bytes": "MDAwMDRFMDYwMDAwMDAwMSAgICAgICAgICAgIA=="
+          }
+        ],
+        [
+          3520,
+          {
+            "$bytes": "MTI3LjAuMC4xKDU2NTkyKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg"
+          }
+        ],
+        [
+          1540,
+          999999999
+        ],
+        [
+          3531,
+          {
+            "$bytes": "MDAwMDAwMDAwMDAwMDAwMA=="
+          }
+        ],
+        [
+          3525,
+          {
+            "$bytes": "ICAgICAgICAgICAg"
+          }
+        ],
+        [
+          3524,
+          {
+            "$bytes": "ICAgICAgICA="
+          }
+        ],
+        [
+          1529,
+          0
+        ],
+        [
+          1542,
+          3
+        ],
+        [
+          122,
+          0
+        ],
+        [
+          1534,
+          0
+        ],
+        [
+          1605,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1562,
+          2
+        ],
+        [
+          2017,
+          {
+            "$bytes": "UU0yICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg"
+          }
+        ],
+        [
+          1541,
+          10
+        ],
+        [
+          1645,
+          0
+        ],
+        [
+          3550,
+          {
+            "$bytes": ""
+          }
+        ],
+        [
+          3544,
+          {
+            "$bytes": "ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA="
+          }
+        ],
+        [
+          3558,
+          {
+            "$bytes": "ICAgICAgICAgICAg"
+          }
+        ],
+        [
+          3559,
+          {
+            "$bytes": "ICAgICAgICA="
+          }
+        ],
+        [
+          3547,
+          {
+            "$bytes": ""
+          }
+        ],
+        [
+          1647,
+          0
+        ],
+        [
+          1610,
+          0
+        ],
+        [
+          1527,
+          3
+        ],
+        [
+          1543,
+          0
+        ],
+        [
+          1609,
+          1600
+        ],
+        [
+          1607,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          3505,
+          {
+            "$bytes": "QkFUQ0guWE1JVFEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg"
+          }
+        ],
+        [
+          1604,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          3560,
+          {
+            "$bytes": "MTAwMDAwMDU="
+          }
+        ],
+        [
+          3561,
+          {
+            "$bytes": "TVFNTQ=="
+          }
+        ]
+      ]
+    }
+  ]
+}

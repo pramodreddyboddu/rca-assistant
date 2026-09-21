@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "tech": "ibmmq",
+    "call": "inquire_channel_status",
+    "key_args": {
+      "op": "MQCMD_INQUIRE_CHANNEL_STATUS",
+      "qmgr": "QM1",
+      "channel": "APP.SVRCONN"
+    },
+    "recorded_at": "2026-09-21T22:29:54.757816+00:00",
+    "source": "live: QM1, IBM MQ 10.0.0.5, htch-runtime, 2026-09-21",
+    "codec": "connectors.recording v1"
+  },
+  "response": [
+    {
+      "$intmap": [
+        [
+          3501,
+          {
+            "$bytes": "QVBQLlNWUkNPTk4gICAgICAgICA="
+          }
+        ],
+        [
+          1511,
+          7
+        ],
+        [
+          1539,
+          28
+        ],
+        [
+          1538,
+          26
+        ],
+        [
+          1536,
+          8868
+        ],
+        [
+          1535,
+          15988
+        ],
+        [
+          3529,
+          {
+            "$bytes": "MjAyNi0wOS0yMSAg"
+          }
+        ],
+        [
+          3528,
+          {
+            "$bytes": "MjIuMjkuNTQ="
+          }
+        ],
+        [
+          1575,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1576,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1611,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1612,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          3506,
+          {
+            "$bytes": "MTI3LjAuMC4xICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg"
+          }
+        ],
+        [
+          1523,
+          1011
+        ],
+        [
+          1606,
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          1563,
+          300
+        ],
+        [
+          3530,
+          {
+            "$bytes": "MDAwMDMyMkQwMDAwMDA4RSAgICAgICAgICAgIA=="
+          }
+        ],
+        [
+          3520,
+          {
+            "$bytes": "OjpmZmZmOjEyNy4wLjAuMSgxNDE0KSAgICAgICAgICAgICAgICAgICAgICAgICAg"
+          }
+        ],
+        [
+          3525,
+          {
+            "$bytes": "MjAyNi0wOS0yMSAg"
+          }
+        ],
+        [
+          3524,
+          {
+            "$bytes": "MjIuMjkuNTQ="
+          }
+        ],
+        [
+          1542,
+          3
+        ],
+        [
+          3527,
+          {
+            "$bytes": "bXFtAA=="
+          }
+        ],
+        [
+          122,
+          0
+        ],
+        [
+          1534,
+          23
+        ],
+        [
+          3548,
+          {
+            "$bytes": "cHl0aG9uMy4xMiAgICAgICAgICAgICAgICAgIA=="
+          }
+        ],
+        [
+          1645,
+          0
+        ],
+        [
+          3550,
+          {
+            "$bytes": ""
+          }
+        ],
+        [
+          3544,
+          {
+            "$bytes": "ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA="
+          }
+        ],
+        [
+          3558,
+          {
+            "$bytes": "ICAgICAgICAgICAg"
+          }
+        ],
+        [
+          3559,
+          {
+            "$bytes": "ICAgICAgICA="
+          }
+        ],
+        [
+          3547,
+          {
+            "$bytes": ""
+          }
+        ],
+        [
+          1647,
+          0
+        ],
+        [
+          1610,
+          0
+        ],
+        [
+          1527,
+          3
+        ],
+        [
+          1543,
+          0
+        ],
+        [
+          1609,
+          300
+        ],
+        [
+          1617,
+          1
+        ],
+        [
+          1616,
+          10
+        ],
+        [
+          3560,
+          {
+            "$bytes": "MTAwMDAwMDU="
+          }
+        ],
+        [
+          3561,
+          {
+            "$bytes": "TVFDQw=="
+          }
+        ]
+      ]
+    }
+  ]
+}

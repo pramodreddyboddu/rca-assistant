@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Mobile-first: this page is the CEO's iPhone demo -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Incident Room — RCA Assistant</title>
+<link rel="stylesheet" href="/static/incident.css">
+</head>
+<body>
+
+<!-- 1 · Header -->
+<header class="room-header">
+  <div class="room-header-top">
+    <h1>Incident Room</h1>
+    <span class="live-badge" role="status">
+      <span class="live-dot" aria-hidden="true"></span>
+      Replay demo — recorded evidence
+    </span>
+  </div>
+  <p class="incident-id">Incident <span id="incident-short-id">…</span></p>
+</header>
+
+<main class="room">
+
+  <!-- 2 · One-line summary -->
+  <section class="summary-card" aria-label="Incident summary">
+    <div id="summary-skeleton" class="skeleton skeleton-title" aria-hidden="true"></div>
+    <h2 id="incident-title" hidden></h2>
+    <p id="incident-meta" class="meta" hidden></p>
+  </section>
+
+  <!-- Global error (honest failure, never silent) -->
+  <div id="fatal-error" class="fatal" role="alert" hidden></div>
+
+  <!-- 3 · Timeline -->
+  <section class="card" aria-label="Incident timeline">
+    <h3 class="card-title">Timeline</h3>
+    <ol id="timeline" class="timeline">
+      <!-- nodes injected by incident.js -->
+    </ol>
+  </section>
+
+  <!-- 4 · Incident card: root cause + confidence + hypotheses -->
+  <section class="card" id="diagnosis-card" aria-label="Diagnosis">
+    <h3 class="card-title">Diagnosis</h3>
+    <div id="diagnosis-body">
+      <div class="skeleton skeleton-block" aria-hidden="true"></div>
+      <div class="skeleton skeleton-block short" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- 5 · Evidence -->
+  <section class="card" id="evidence-card" aria-label="Evidence">
+    <h3 class="card-title">Evidence <span id="evidence-count" class="count-pill" hidden></span></h3>
+    <div id="evidence-body">
+      <div class="skeleton skeleton-block" aria-hidden="true"></div>
+      <div class="skeleton skeleton-block" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- 6 · Proposed fix -->
+  <section class="card" id="fix-card" aria-label="Proposed fix">
+    <h3 class="card-title">Proposed fix</h3>
+    <div id="fix-body">
+      <div class="skeleton skeleton-block" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- 7 · Verification -->
+  <section class="card" id="verify-card" aria-label="Verification" hidden>
+    <h3 class="card-title">Verification</h3>
+    <div id="verify-body"></div>
+  </section>
+
+  <!-- 8 · Audit trail -->
+  <section class="card" aria-label="Audit trail">
+    <button id="audit-toggle" class="audit-toggle" aria-expanded="false" aria-controls="audit-body">
+      <span>Audit trail</span>
+      <span class="audit-chevron" aria-hidden="true">▸</span>
+    </button>
+    <div id="audit-body" class="audit-body" hidden>
+      <pre id="audit-log" class="audit-log">Loading…</pre>
+    </div>
+  </section>
+
+  <!-- Run again -->
+  <div class="run-again-row">
+    <button id="btn-run-again" class="btn btn-ghost" disabled>Run again</button>
+  </div>
+
+  <!-- 9 · Footer honesty note -->
+  <footer class="honesty">
+    <p>Evidence replayed from recordings captured live from QM1 (IBM MQ 10.0.0.5) on 2026-09-21. Demo mode touches no live systems.</p>
+  </footer>
+
+</main>
+
+<script src="/static/incident.js"></script>
+</body>
+</html>
