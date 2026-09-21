@@ -1,0 +1,68 @@
+name: Bug report
+description: Something isn't working the way the docs say it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Before submitting, please make sure you're on the
+        latest release and that the behavior is reproducible.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear, concise description of the bug.
+      placeholder: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The smallest set of steps that triggers the bug.
+      placeholder: |
+        1. Run `...`
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-actual
+    attributes:
+      label: Expected vs. actual behavior
+      description: What did you expect, and what actually happened?
+      placeholder: |
+        Expected: ...
+        Actual: ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        Paste the output of `rca version`, plus your Python version and OS.
+        Run these commands and paste the results:
+        ```
+        rca version
+        python --version
+        ```
+      placeholder: |
+        rca version: (paste output)
+        python --version: (paste output)
+        OS: (e.g. Ubuntu 24.04, macOS 15, Windows 11 + WSL2)
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / audit excerpt
+      description: |
+        Relevant log lines or the redacted audit excerpt. IMPORTANT: redact any
+        secrets (tokens, passwords, connection strings) before pasting.
+      placeholder: |
+        ```
+        (paste logs here; secrets redacted)
+        ```
+      render: shell
+    validations:
+      required: false

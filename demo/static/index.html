@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RCA Assistant — Web Demo</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>RCA Assistant — Web Demo</h1>
+  <p class="explainer">
+    Click through an incident the way the CLI demo works: inject an incident,
+    diagnose it with read-only tools, propose a remediation plan, approve each
+    privileged step, then download the incident report. Nothing here touches
+    real infrastructure. When a TypeSafe key is configured, every diagnosis
+    carries visible Jev confidence scoring.
+  </p>
+</header>
+
+<div id="jev-banner" class="jev-banner"><p class="muted small">Checking Jev status…</p></div>
+
+<main>
+  <!-- Left: scenarios + active run -->
+  <section id="panel-scenarios" aria-label="Scenarios">
+    <h2>1 · Inject an incident</h2>
+    <div id="scenarios"><p class="muted">Loading scenarios…</p></div>
+    <h2>Active run</h2>
+    <div id="run-info"><p class="muted">No run yet. Pick a scenario above.</p></div>
+  </section>
+
+  <!-- Center: timeline, evidence, plan, approval -->
+  <section id="panel-flow" aria-label="Diagnosis flow">
+    <h2>2 · Timeline</h2>
+    <ol id="timeline"></ol>
+
+    <h2>Evidence <span id="evidence-count" class="muted"></span></h2>
+    <div id="evidence"><p class="muted">No diagnosis yet.</p></div>
+    <div class="row">
+      <button id="btn-diagnose" disabled>Diagnose</button>
+      <button id="btn-plan" disabled>Propose plan</button>
+    </div>
+
+    <h2>Plan</h2>
+    <div id="plan"><p class="muted">No plan proposed yet.</p></div>
+
+    <h2>Approval</h2>
+    <div id="approval"><p class="muted">No pending approval.</p></div>
+  </section>
+
+  <!-- Right: audit trail, report, host compare -->
+  <section id="panel-audit" aria-label="Audit trail">
+    <h2>Audit trail</h2>
+    <div class="row">
+      <button id="btn-audit" disabled>Refresh</button>
+      <span id="audit-status" class="muted"></span>
+    </div>
+    <div class="table-wrap">
+      <table id="audit-table">
+        <thead>
+          <tr><th>Seq</th><th>Time (UTC)</th><th>Event</th><th>Actor</th><th>Details</th></tr>
+        </thead>
+        <tbody id="audit-body">
+          <tr><td colspan="5" class="muted">No run yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Incident report</h2>
+    <button id="btn-report" disabled>Download incident report (.md)</button>
+
+    <h2>Host: sim vs real</h2>
+    <p class="muted small">
+      Same MCP gateway, same read token — left is the simulated estate,
+      right is this machine’s live <code>/proc</code> data.
+    </p>
+    <button id="btn-host">Compare hosts</button>
+    <div id="host-compare"></div>
+  </section>
+</main>
+
+<footer>
+  <p class="muted small">
+    Local demo only: this server binds 127.0.0.1 and has no authentication.
+    Approvals here mirror the CLI flow — every privileged step still needs
+    an explicit human decision, and every event lands in the hash-chained audit log.
+  </p>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

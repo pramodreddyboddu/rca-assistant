@@ -1,0 +1,38 @@
+# RCA assistant — single-service customer-hosted deployment.
+#
+#   cp .env.example .env        # edit only the values you need
+#   docker compose up -d --build
+#
+# No secrets live in this file: credentials come from .env (env_file) or
+# the host environment. .env is gitignored and excluded from the image.
+
+services:
+  rca:
+    build: .
+    image: rca-assistant:local
+    container_name: rca-assistant
+    # Host port comes from RCA_PORT (default 8765); container always listens
+    # on 8765 (see Dockerfile CMD).
+    ports:
+      - "${RCA_PORT:-8765}:8765"
+    env_file:
+      - .env
+    environment:
+      # Belt and braces: if .env is absent, the app still gets sane defaults
+      # (these are also the in-code defaults; values in .env win).
+      RCA_PORT: ${RCA_PORT:-8765}
+      RCA_JEV_ENABLED: ${RCA_JEV_ENABLED:-1}
+    volumes:
+      # Persist run history + audit trail across container restarts/upgrades.
+      - rca-runs:/app/runs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import os,urllib.request;urllib.request.urlopen('http://127.0.0.1:8765/healthz',timeout=4)\""]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  rca-runs:
+    name: rca-assistant-runs
