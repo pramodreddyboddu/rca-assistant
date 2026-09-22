@@ -89,7 +89,12 @@ def _build(name):
         return KubernetesConnector()
     if name == "docker":
         from connectors.docker import DockerConnector
-        return DockerConnector()
+        # Deliberately unreachable socket path, mirroring the probe.invalid
+        # convention used for the host-based connectors above: the default
+        # /var/run/docker.sock exists on Docker hosts (e.g. CI runners),
+        # which would make connect() succeed and break the unreachable-target
+        # contract this fixture is built to exercise.
+        return DockerConnector(socket_path="/nonexistent/docker.sock")
     raise AssertionError(f"unknown connector {name}")
 
 

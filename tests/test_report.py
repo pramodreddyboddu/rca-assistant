@@ -153,7 +153,11 @@ def test_cli_writes_file_and_warns_on_invalid(tmp_path, capsys):
     path = run_dir / "audit.jsonl"
     lines = path.read_text(encoding="utf-8").splitlines()
     entry = json.loads(lines[-1])
-    entry["hash"] = "f" + entry["hash"][1:]
+    # Flip the first hex char to a *different* value: replacing it with "f"
+    # is a no-op when the hash already starts with "f" (1/16 of runs),
+    # which would leave the chain VALID and make this test flaky.
+    first = entry["hash"][0]
+    entry["hash"] = ("0" if first != "0" else "1") + entry["hash"][1:]
     lines[-1] = json.dumps(entry)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
