@@ -22,7 +22,17 @@ jobs:
           pip install .
 
       - name: Run test suite
-        run: python -m pytest -q
+        # DIAGNOSTIC (temporary): on failure, surface the pytest failure
+        # details as a check annotation, since step logs need sign-in to view.
+        run: |
+          set +e
+          python -m pytest -q 2>&1 | tee pytest-output.log
+          PYTEST_EXIT_CODE=${PIPESTATUS[0]}
+          set -e
+          if [ "$PYTEST_EXIT_CODE" -ne 0 ]; then
+            python .github/workflows/annotate_pytest_failures.py pytest-output.log
+          fi
+          exit "$PYTEST_EXIT_CODE"
 
       - name: Run connector self-test harness
         # Static contract checks only: no live targets, no real secrets, no drivers required.
